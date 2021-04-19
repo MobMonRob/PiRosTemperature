@@ -2,7 +2,6 @@
 
 import rospy
 from sensor_msgs.msg import Temperature
-import glob
 from time import time
 import RPi.GPIO as GPIO
 
@@ -12,13 +11,8 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(4, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 base_dir = '/sys/bus/w1/devices/'
-while True:
-    try:
-        device_folder = glob.glob(base_dir + '28*')[0]
-        break
-    except IndexError:
-        time.sleep(0.5)
-        continue
+
+device_folder = '28-3c01d60700ab'
 device_file = device_folder + '/w1_slave'
 
 def TemperaturMessung():
