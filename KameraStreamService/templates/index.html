@@ -1,14 +1,25 @@
 <html>
   <head>
+    <meta charset="utf-8">
     <title>Pi Video Surveillance</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
+    <meta name="Felix Bächle" >
+    
   </head>
   <body>
-    <h1>Pi Video Surveillance</h1>
-    <img src="{{ url_for('video_feed') }}">
-    <h3>Our Flask Buttons<h3/>
-      <form method="post" action="/">
-          <input type="submit" value="Record" name="action1"/>
-          <input type="submit" value="Pause" name="action2" />
-      </form>
+  <div class = container> 
+      <div class = left>
+        <h1>Pi Video Surveillance</h1>
+        <img src="{{ url_for('video_feed') }}">
+        <h3>Our Flask Buttons<h3/>
+          <form method="post" action="/">
+            <input type="submit" value="Record" name="action1"/>
+            <input type="submit" value="Pause" name="action2" />
+          </form>
+      </div>
+      <div class = right>
+        <h1>Hello</h1>
+      </div>
+  </div>
   </body>
 </html>

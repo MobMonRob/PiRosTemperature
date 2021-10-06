@@ -1,0 +1,19 @@
+.container {
+    position: relative;
+    width: 90%;
+    height: 90%;
+  }
+
+.left {
+    width:75%;
+    height:50%;
+    float: left;
+    background-color: brown;
+    
+}
+.right{
+  width: 25%;
+  height: 50%;
+  float: right;
+  background-color: rebeccapurple
+}
