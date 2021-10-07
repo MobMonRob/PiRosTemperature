@@ -7,7 +7,8 @@ from flask import render_template
 from pypylon import pylon
 import threading
 import cv2
-
+import os
+os.environ["PYLON_CAMEMU"] = "1"
 
 lock = threading.Lock()
 # initialize a flask object
@@ -31,7 +32,7 @@ converter.OutputBitAlignment = pylon.OutputBitAlignment_MsbAligned
 @app.route("/")
 def index():
     # return the rendered template
-    return render_template("index.html")
+    return render_template("index.html", current_temperature=23)
 
 
 def generate():
